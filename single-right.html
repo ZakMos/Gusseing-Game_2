@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +9,13 @@
   <link rel="stylesheet" href="/styles/main.css">
   <title>Guessing Game</title>
 </head>
-
 <body>
   <main class="main-content jumbotron jumbotron-fluid mb-0 d-flex">
     <div class="container text-center m-auto">
-      <h1 class="display-1">Guess me!</h1>
-      <p class="lead">I'm thinking of a number between 1 and 10, can you guess it?</p>
-      <div class="">
-        <input type="number" class="h3 mb-0">
-        <button class="btn btn-primary btn-lg" role="button" id="play" onclick="writeResult(guessingGame())">Play!</button>
-      </div>
-      
+      <h1 class="display-1">Great job!</h1>
+      <p class="lead" id="success"></p>
+
+      <button class="btn btn-primary btn-lg" role="button" id="play" onclick="writeResult(guessingGame())"><a href="index.html"></a>Play again!</button>
 
       <p id="result" class="lead mt-4"></p>
     </div>
@@ -35,5 +30,4 @@
   <!-- Guessing game script -->
   <script src="/scripts/main.js"></script>
 </body>
-
 </html>
