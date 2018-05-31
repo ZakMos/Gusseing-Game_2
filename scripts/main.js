@@ -25,8 +25,7 @@ printAppScreen(`
   </div>
   </form>
   `);
-
-
+  
   let quessForm = document.querySelector('#guess-form');
 
  guessForm.addEventListener('submit', makeGuess);
