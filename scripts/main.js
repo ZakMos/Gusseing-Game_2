@@ -6,17 +6,17 @@ function getRandomIntInclusive(min, max) {
 
 
 function printAppScreen(htmlString) {
-  let appElem = document.querySelector('#app');
+  let appElem = document.querySelector('#container');
   appElem.innerHTML = htmlString;
 }
 
 
 function printGuessScreen(title, message){
 printAppScreen(`
-<h1 class="display-1">${title}<ht>
+<h1 class="display-1">${title}<h1>
 <p class ="lead">${message}</p>
 <form class="mt-4 w-50 mx-auto" id="guess-form">
-  div class="col-xs-12 col-sm">
+  <div class="col-xs-12 col-sm">
   <input type="number" class="form-control" name="guess" id="guess" placeholder = "Your guess goes here ...." required min="1" max="10">
   </div>
   <div class="col-xs-12 col-sm-4">
@@ -26,21 +26,23 @@ printAppScreen(`
   </form>
   `);
 
+
   let quessForm = document.querySelector('#guess-form');
 
-  guessForm.addEventListener('submit', makeGuess);
+ guessForm.addEventListener('submit', makeGuess);
 
 }
 
-function printResultScreen(title, message) {
-  printAppScreen(`
-  <h1 class="display-1">${title}</h1>
-    <p class="lead">${message}</p>
-    <utton class= btn btn-primary btn-lg" role="button" id="again">play Again!</button>
-  `);
-  let againButton = document.querySelector('#again');
-  againButton.addEventListener('clic', startGame);
-}
+
+//function printResultScreen(title, message) {
+//  printAppScreen(`
+//  <h1 class="display-1">${title}</h1>
+  //  <p class="lead">${message}</p>
+    //<utton class= btn btn-primary btn-lg" role="button" id="again">play Again!</button>
+//  `);
+  //let againButton = document.querySelector('#again');
+  //againButton.addEventListener('clic', startGame);
+//}
 
 
 
