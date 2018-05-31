@@ -1,7 +1,7 @@
 function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
 }
 
 
@@ -25,7 +25,7 @@ printAppScreen(`
   </div>
   </form>
   `);
-  
+
   let quessForm = document.querySelector('#guess-form');
 
  guessForm.addEventListener('submit', makeGuess);
@@ -91,12 +91,6 @@ printAppScreen(`
   //  return containerElem.innerHTML=  `Success: the number is indeed ${numberToGuess}. You got the number correctly after ${count} attempts.`;
   //}
 //}
-
-// function writeResult(string){
-//   document.getElementById('result1').innerText = string;
-// }
-  // This is the better way to do it, however it's still not the most ideal way, I'll explain after the vacation.
-  //  document.getElementById('play').onclick = () => writeResult(guessingGame())
 
 
   // function printScreen(htmlString){

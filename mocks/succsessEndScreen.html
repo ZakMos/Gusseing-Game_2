@@ -8,20 +8,18 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
   <link rel="stylesheet" href="/styles/main.css">
-  <title>Guessing Game</title>
+  <title>End Screen</title>
 </head>
 
 <body>
-  <main class="main-content jumbotron jumbotron-fluid mb-0 d-flex">
+  <main class="main-content jumbotron jumbotron-fluid mb-0 d-flex" id="successScreen">
     <div class="container text-center m-auto">
-      <h1 class="display-1 col-sm-10">Sorry!!</h1>
-      <p class="lead" id="sorry"></p>
-
-      <button class="btn btn-primary btn-lg" role="button" id="play-again" onclick="writeResult(guessingGame())"><a href="index.html"></a>Play again!</button>
-
-      <p id="result3" class="lead mt-4"></p>
+      <h1 class="display-1">Great Job!!</h1>
+      <p class="lead">success: The number is indeed ${numberToGuess}. You got the number correctly after ${count} attempts</p>
+      <div class="">
+        <button class="btn btn-primary btn-lg" role="button" id="play-again" onclick="guessingGame()">Play again!</button>
+      </div>
     </div>
-
   </main>
 
   <!-- External javascipt -->
