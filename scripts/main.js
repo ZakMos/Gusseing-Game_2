@@ -4,10 +4,52 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
 }
 
+
+function printAppScreen(htmlString) {
+  let appElem = document.querySelector('#app');
+  appElem.innerHTML = htmlString;
+}
+
+
+function printGuessScreen(title, message){
+printAppScreen(`
+<h1 class="display-1">${title}<ht>
+<p class ="lead">${message}</p>
+<form class="mt-4 w-50 mx-auto" id="guess-form">
+  div class="col-xs-12 col-sm">
+  <input type="number" class="form-control" name="guess" id="guess" placeholder = "Your guess goes here ...." required min="1" max="10">
+  </div>
+  <div class="col-xs-12 col-sm-4">
+  <button type="submit" class="btn btn-primary w-100">Guess</buttoon>
+  </div>
+  </div>
+  </form>
+  `);
+
+  let quessForm = document.querySelector('#guess-form');
+
+  guessForm.addEventListener('submit', makeGuess);
+
+}
+
+function printResultScreen(title, message) {
+  printAppScreen(`
+  <h1 class="display-1">${title}</h1>
+    <p class="lead">${message}</p>
+    <utton class= btn btn-primary btn-lg" role="button" id="again">play Again!</button>
+  `);
+  let againButton = document.querySelector('#again');
+  againButton.addEventListener('clic', startGame);
+}
+
+
+
+
+
 function guessingGame(){
 
-  // Create a number to guess between 0 and 10
-  let numberToGuess = getRandomIntInclusive(0, 10); // 10
+    // Create a number to guess between 0 and 10
+  let numberToGuess = getRandomIntInclusive(1, 10); // 10
 
   // Initialize a counter
   let count = 1;
@@ -22,21 +64,21 @@ function guessingGame(){
      }
 
      else if(guess !== numberToGuess){
-      
+
         if(count > 3){
           containerElem.innerHTML= `Sorry human, but you couldn't guess the number in less than three times. The number was ${numberToGuess}`;
         }
         else{
         containerElem.innerHTML=`Wrong!!! Try Again! You have ${3 - count} attempts left`;
-      
+
         }
-        
+
         count +=1;
      }
     //    else {
     //   // Try to guess a number
     //  return containerElem.innerHTML=`Wrong!!! Try Again! You have ${3 - count} attempts left`;
-     
+
     //   // Count the guess
     //   count++;
     //  }
@@ -46,7 +88,7 @@ function guessingGame(){
   else{
     // ... print the success message
     return containerElem.innerHTML=  `Success: the number is indeed ${numberToGuess}. You got the number correctly after ${count} attempts.`;
-  } 
+  }
 }
 
 // function writeResult(string){
@@ -58,16 +100,16 @@ function guessingGame(){
 
   // function printScreen(htmlString){
   //   let containerElem = document.querySelector('#result1');
-    
+
   //   containerElem.innerHTML = htmlString;
   // }
-  
+
   // printScreen(`<button id="changeScreen">Change</button>`);
-  
+
   // let buttonElem = document.querySelector('#play');
-  
+
   // buttonElem.addEventListener('click', event => {
   //   event.preventDefault();
-    
+
   //  return printScreen(guessingGame());
   // });
